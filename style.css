@@ -67,7 +67,10 @@ p{
   -webkit-transition: .4s;
   transition: .4s;
 }
+.slider:hover{
+  background-color: var(--slider-background);
 
+}
 .slider:before {
   position: absolute;
   content: "";
@@ -81,11 +84,11 @@ p{
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: var(--slider-background);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px var(--slider-background);
 }
 
 input:checked + .slider:before {
@@ -213,10 +216,16 @@ button{
     border-radius: 20px;
     cursor: pointer;
 }
+.grid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+}
 
 input[type=range] {
     -webkit-appearance: none;
-    width: 350px;
+    width: 100%;
     height: 7px;
     margin-bottom: 30px;
     background-image: linear-gradient(var(--slider-background),var(--slider-background));
@@ -224,7 +233,9 @@ input[type=range] {
     background-repeat: no-repeat;
 
  }
-
+.pageViews{
+    align-items: center;
+}
  input[type=range]::-webkit-slider-runnable-track {
     width: 600px;
     height: 5px;
@@ -255,3 +266,53 @@ input[type=range] {
     background-repeat: no-repeat;
     background-position: center;
  }
+@media (min-width: 500px) {
+    .card{
+        width: 600px;
+    }
+   .grid{
+        display: grid;
+        grid-template-areas: "pages price"
+                            "range range";
+        width: 100%;
+   }
+
+   .grid h3{
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        grid-area: pages;
+   }
+
+   .pricing{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       grid-area: price;
+   }
+
+   input[type=range]{
+        grid-area: range;
+        width: 100%;
+   }
+   .disc-desktop{
+        display: block;
+        background-color: var(--discount-background);
+        color: var(--discount-text);
+        padding: 2px 6px;
+        border-radius: 6px;
+        font-size: 10px;
+}
+    .disc-mobile{
+        display: none;
+    }
+    .item{
+        justify-content: left;
+    }
+    .list-btn{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
