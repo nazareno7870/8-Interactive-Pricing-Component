@@ -1,0 +1,252 @@
+:root{
+    --full-silder-bar: hsl(174, 77%, 80%);
+    --slider-background: hsl(174, 86%, 45%);
+    --discount-background: hsl(14, 92%, 95%);
+    --discount-text: hsl(15, 100%, 70%);
+    --pale-blue: hsl(226, 100%, 87%);
+
+    --pricing-background: hsl(0, 0%, 100%);
+    --main-background: hsl(230, 100%, 99%);
+    --empty-slider: hsl(224, 65%, 95%);
+    --toggle-background: hsl(223, 50%, 87%);
+    --text: hsl(225, 20%, 60%);
+    --text-cta-background: hsl(227, 35%, 25%);
+
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: var(--main-background);
+    background-image: url('./images/bg-pattern.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0px -100px;
+    font-family: 'Manrope', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    font-size: 15px;
+}
+    /* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 20px;
+  margin-left: 6px;
+  margin-right: 10px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(19px);
+  -ms-transform: translateX(19px);
+  transform: translateX(19px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    background-image: url('./images/pattern-circles.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 130px;
+    padding: 50px 0;
+}
+
+h2{
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: var(--text-cta-background);
+}
+.title p{
+    color: var(--text);
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.card{
+    background-color: #fff;
+    width: 90%;
+    padding: 30px 24px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    box-shadow: 0px 3px 4px #ccc;
+}
+
+h3{
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text);
+    margin-bottom: 30px;
+}
+
+h1{
+    font-size: 30px;
+    color: var(--text-cta-background);
+
+}
+
+.disc-desktop{
+    display: none;
+}
+
+.pricing{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+span{
+    font-size: 12px;
+    color: var(--text);
+    margin-left: 6px;
+}
+
+.billing{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+h4{
+    font-size: 12px;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.disc-mobile{
+    background-color: var(--discount-background);
+    color: var(--discount-text);
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-size: 10px;
+}
+.list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 26px;
+}
+.item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+button{
+    border: none;
+    outline: none;
+    color: var(--text);
+    background-color: var(--text-cta-background);
+    font-weight: 800;
+    font-size: 11px;
+    padding: 10px 40px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    margin-bottom: 30px;
+ }
+
+ input[type=range]::-webkit-slider-runnable-track {
+    width: 600px;
+    height: 5px;
+    background: var(--slider-background);
+    border: none;
+    border-radius: 3px;
+ }
+
+ input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: var(--slider-background);
+    background-image: url('./images/icon-slider.svg');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: -13px;
+    cursor: pointer;
+    box-shadow: 1px 2px 10px var(--slider-background);
+ }
+
+ input[type=range]::-webkit-slider-thumb:hover{
+    background: hsl(174deg 69% 42%);
+    background-image: url('./images/icon-slider.svg');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+ }
