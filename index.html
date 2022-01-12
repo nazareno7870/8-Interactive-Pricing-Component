@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
+  <script src="./main.js"></script>
   <title>Interactive pricing component</title>
 
 </head>
@@ -18,19 +19,12 @@
     <p>No credit card required.</p>
   </div>
   <div class="card">
-    <h3>100K Pageviews</h3>
+    <h3 id="pageViews">100K Pageviews</h3>
 
-    <input type="range" list="tickmarks" step="1" min="1" max="5">
+    <input id="ran" type="range"  step="1" min="1" max="5">
 
-    <datalist id="tickmarks">
-      <option value="10K">
-      <option value="50K">
-      <option value="100K">
-      <option value="500K">
-      <option value="1M">
-    </datalist>
     <div class="pricing">
-      <h1>$16.00 </h1>
+      <h1 id="planPrice">$16.00 </h1>
       <span>/ month</span>
     </div>
     
@@ -38,7 +32,7 @@
     <div class="billing">
       <h4>Monthly Billing</h4> 
       <label class="switch">
-        <input type="checkbox">
+        <input id="isAnnual" type="checkbox">
         <span class="slider round"></span>
       </label>
 
